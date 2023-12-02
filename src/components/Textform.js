@@ -10,6 +10,7 @@ const Textform = (props) => {
         let newText = text.toUpperCase();
 
         setText(newText);
+        props.showAlert("Converted to Uppercase", "success")
 
 
     }
@@ -20,6 +21,8 @@ const Textform = (props) => {
         let newText = text.toLowerCase();
 
         setText(newText);
+        props.showAlert("Converted to Lowercase", "success")
+
 
 
     }
@@ -27,13 +30,14 @@ const Textform = (props) => {
     const copyToClipboard = () => {
         navigator.clipboard.writeText(text);
         // console.log("copied ");
-        alert("copied to clipboard hehe")
+        props.showAlert("Copied to clipboard", "success")
     };
 
 
     const handleOnchange = (event) => {
         // console.log("on change ");
         setText(event.target.value)
+        
     }
 
 
